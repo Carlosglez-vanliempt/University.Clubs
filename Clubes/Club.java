@@ -74,11 +74,11 @@ public class Club {
 
                     break;
                 case "3":
-                    cambiar_aula();
+                    cambiar_aula(horario);
 
                     break;
                 case "4":
-                    cancelar_evento();
+                    cancelar_evento(horario);
 
                     break;
                 case "5":
@@ -169,7 +169,47 @@ public class Club {
         // guardamos el objeto en el array
         horario.add(new Evento(actividad.getNombre(),actividad.getLugar(),actividad.getCapacidad(),actividad.getFecha()));
     }
-    private void cambiar_aula(){}
-    private void cancelar_evento(){}
+    private void cambiar_aula(ArrayList<Evento> horario){
+        Evento actividad = new Evento();
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Por favor introduzca el nombre del evento");
+        String nombre = teclado.next();
+        int posicion = 0;
+        boolean encontrado = false;
+        while (posicion < horario.size() && !encontrado) {
+            if (horario.get(posicion).getNombre() == nombre) {
+                encontrado = true;
+            } else {
+                posicion++;
+            }
+        }
+        if (encontrado) {
+            actividad = horario.get(posicion);
+            System.out.println("Por favor introduzca el lugar del evento");
+            String input = teclado.next();
+            actividad.setLugar(input);
+            horario.remove(posicion);
+            horario.add(posicion, actividad);
+
+
+    }
+    }
+    private void cancelar_evento(ArrayList<Evento> horario){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Por favor introduzca el nombre del evento");
+        String nombre = teclado.next();
+        int posicion = 0;
+        boolean encontrado = false;
+        while (posicion < horario.size() && !encontrado) {
+            if (horario.get(posicion).getNombre() == nombre) {
+                encontrado = true;
+            } else {
+                posicion++;
+            }
+        }
+        if (encontrado) {
+            horario.remove(posicion);
+        }
+    }
     private void mod_inscripcion(){}
 }
