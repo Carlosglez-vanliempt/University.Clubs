@@ -102,47 +102,46 @@ public class Club {
     }
 
     private ArrayList<Evento> registrar_horario(){
-        Evento actividad = new Evento();
+
         Scanner teclado = new Scanner(System.in);
         String input;
         int input2;
         ArrayList<Evento> horario = new ArrayList<Evento>();
-        int numero_productos = 0;
+        int numero_eventos = 0;
 
         // Solicitar productos
         System.out.print("Indique numero de eventos o actividades a listar: ");
         if (teclado.hasNextInt()) {
-            numero_productos = teclado.nextInt();
+            numero_eventos = teclado.nextInt();
         } else {
             System.out.print("Error en el numero de productos.");
         }
-        if (numero_productos > 0) {
+        if (numero_eventos> 0) {
             // solicitar los datos de los productos
-            for (int i = 0; i < numero_productos; i++) {
+            for (int i = 0; i < numero_eventos; i++) {
 
-                System.out.println("----- Producto "+(i+1)+" -----");
+                System.out.println("----- Evento "+(i+1)+" -----");
 
                 // establecemos el objeto
                 System.out.println("Por favor introduzca el nombre del evento");
-                input = teclado.next();
-                actividad.setNombre(input);
+                String nombre = teclado.next();
 
 
                 System.out.println("Por favor introduzca el lugar del evento");
-                input = teclado.next();
-                actividad.setLugar(input);
+               String lugar = teclado.next();
 
 
-                System.out.println("Por favor introduzca el aforo máximo del evento");
-                input2 = teclado.nextInt();
-                actividad.setApuntados(input2);
+
+                System.out.println("Por favor introduzca los ocupantes del evento");
+               int ocupantes = teclado.nextInt();
+
 
                 System.out.println("Por favor introduzca la fecha de realización del evento");
-                input = teclado.next();
-                actividad.setFecha(input);
+                String fecha = teclado.next();
+
 
                 // guardamos el objeto en el array
-                horario.add(new Evento(actividad.getNombre(),actividad.getLugar(),actividad.getApuntados(),actividad.getFecha()));
+                horario.add(new Evento(nombre,lugar,ocupantes,fecha));
 
             }
             System.out.println("Se ha generado el inventario de forma correcta");
@@ -150,37 +149,35 @@ public class Club {
         return horario;
     }
     private void crear_evento(ArrayList<Evento> horario){
-        Evento actividad = new Evento();
         Scanner teclado = new Scanner(System.in);
         String input;
         int input2;
         int numero_productos = 0;
-        System.out.println("Por favor introduzca el nombre del nuevo evento");
-        input = teclado.next();
-        actividad.setNombre(input);
+        System.out.println("Por favor introduzca el nombre del evento");
+        String nombre = teclado.next();
 
 
         System.out.println("Por favor introduzca el lugar del evento");
-        input = teclado.next();
-        actividad.setLugar(input);
+        String lugar = teclado.next();
 
 
-        System.out.println("Por favor introduzca el aforo máximo del evento");
-        input2 = teclado.nextInt();
-        actividad.setApuntados(input2);
+
+        System.out.println("Por favor introduzca los ocupantes del evento");
+        int ocupantes = teclado.nextInt();
+
 
         System.out.println("Por favor introduzca la fecha de realización del evento");
-        input = teclado.next();
-        actividad.setFecha(input);
-
-        // guardamos el objeto en el array
-        horario.add(new Evento(actividad.getNombre(),actividad.getLugar(),actividad.getApuntados(),actividad.getFecha()));
+        String fecha = teclado.next();
     }
     private void cambiar_aula(ArrayList<Evento> horario){
-        Evento actividad = new Evento();
+        String nombre = "prueba";
+        String lugar = "prueba";
+        int ocupantes = 0;
+        String fecha = "prueba";
+        Evento actividad = new Evento(nombre,lugar,ocupantes,fecha);
         Scanner teclado = new Scanner(System.in);
         System.out.println("Por favor introduzca el nombre del evento");
-        String nombre = teclado.next();
+        nombre = teclado.next();
         int posicion = 0;
         boolean encontrado = false;
         while (posicion < horario.size() && !encontrado) {
@@ -219,7 +216,9 @@ public class Club {
         }
     }
     private ArrayList<Anuncio> anuncio(ArrayList<Anuncio> tablon){
-        Anuncio aviso = new Anuncio();
+        String desc = "prueba";
+        String fecha = "prueba";
+        Anuncio aviso = new Anuncio(desc,fecha);
         Scanner teclado = new Scanner(System.in);
         String input;
         System.out.println("Por favor introduzca el nombre del nuevo evento");
