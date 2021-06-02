@@ -1,7 +1,6 @@
 package Clubes;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Club {
@@ -9,6 +8,13 @@ public class Club {
     private String descripcion;
     private String miembros;
     private String tablon;
+
+    public Club(String nombre, String descripcion, String miembros, String tablon) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.miembros = miembros;
+        this.tablon = tablon;
+    }
 
     public String getNombre() {
         return nombre;
