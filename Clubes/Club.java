@@ -135,14 +135,14 @@ public class Club {
 
                 System.out.println("Por favor introduzca el aforo máximo del evento");
                 input2 = teclado.nextInt();
-                actividad.setCapacidad(input2);
+                actividad.setApuntados(input2);
 
                 System.out.println("Por favor introduzca la fecha de realización del evento");
                 input = teclado.next();
                 actividad.setFecha(input);
 
                 // guardamos el objeto en el array
-                horario.add(new Evento(actividad.getNombre(),actividad.getLugar(),actividad.getCapacidad(),actividad.getFecha()));
+                horario.add(new Evento(actividad.getNombre(),actividad.getLugar(),actividad.getApuntados(),actividad.getFecha()));
 
             }
             System.out.println("Se ha generado el inventario de forma correcta");
@@ -167,14 +167,14 @@ public class Club {
 
         System.out.println("Por favor introduzca el aforo máximo del evento");
         input2 = teclado.nextInt();
-        actividad.setCapacidad(input2);
+        actividad.setApuntados(input2);
 
         System.out.println("Por favor introduzca la fecha de realización del evento");
         input = teclado.next();
         actividad.setFecha(input);
 
         // guardamos el objeto en el array
-        horario.add(new Evento(actividad.getNombre(),actividad.getLugar(),actividad.getCapacidad(),actividad.getFecha()));
+        horario.add(new Evento(actividad.getNombre(),actividad.getLugar(),actividad.getApuntados(),actividad.getFecha()));
     }
     private void cambiar_aula(ArrayList<Evento> horario){
         Evento actividad = new Evento();

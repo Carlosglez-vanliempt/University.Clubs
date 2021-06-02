@@ -4,15 +4,14 @@ package Clubes;
 public class Evento {
     private String nombre;
     private String lugar;
-    private int capacidad;
+    private int apuntados;
     private String fecha;
-
     //Constructor
 
     public Evento(String nombre, String lugar, int capacidad, String fecha) {
         this.nombre = nombre;
         this.lugar = lugar;
-        this.capacidad = capacidad;
+        this.apuntados = apuntados;
         this.fecha = fecha;
     }
 
@@ -33,12 +32,12 @@ public class Evento {
         this.lugar = lugar;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public int getApuntados() {
+        return apuntados;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public void setApuntados(int capacidad) {
+        this.apuntados = capacidad;
     }
 
     public String getFecha() {
