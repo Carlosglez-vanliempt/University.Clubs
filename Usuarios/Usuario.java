@@ -1,5 +1,6 @@
-package usuarios;
+package Usuarios;
 import Clubes.Club;
+import Clubes.Evento;
 
 import java.util.Vector;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class Usuario {
     private String contraseña;
     boolean lider = false;
     Vector<Club> clubes = new Vector();
-    Vector actividades;
+    Vector <Evento> actividades = new Vector();
 
     public Vector getClubes() {
         return clubes;
@@ -135,28 +136,17 @@ public class Usuario {
         }
     }
 
-    public void ApuntarActividad() {
+    public void ApuntarActividad(Evento evento) {
+        actividades.addElement(evento);
+
     }
 
-    public void añadirClub(int opt, Club[] club) {
-        System.out.println("Elige un club");
-        System.out.println("1. Matemáticas \n" +
-                "2. Física\n" +
-                "3. Biología\n" +
-                "4. Literatura\n" +
-                "5. Filosofía\n" +
-                "6. Atletismo\n" +
-                "7. Tenis\n" +
-                "8. Padel\n" +
-                "9. Fútbol\n" +
-                "10. Basket\n" +
-                "11. Alpinismo\n" +
-                "12. Ciclismo\n" +
-                "13. Programación\n" +
-                "14. E-Sports\n" +
-                "15. Robótica");
-        opt = in.nextInt();
-        clubes.addElement(club[opt]);
+    public Vector<Evento> getActividades() {
+        return actividades;
+    }
+
+    public void añadirClub(Club club) {
+      clubes.addElement(club);
     }
 
     public void eliminarClub(int opt) {
