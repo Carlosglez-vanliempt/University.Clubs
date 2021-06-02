@@ -55,6 +55,7 @@ public class Club {
     public void Menu(){
         Scanner teclado = new Scanner(System.in);
         ArrayList<Evento> horario = new ArrayList<Evento>();
+        ArrayList<Anuncio> tablon = new ArrayList<Anuncio>();
 
         Scanner input = new Scanner(System.in);
         String menu = "0";
@@ -65,7 +66,7 @@ public class Club {
                             "2 - Crear nuevo evento\n" +
                             "3 - Cambiar aula de un evento\n" +
                             "4 - Cancelar evento\n" +
-                            "5 - Modificar descripción\n" +
+                            "5 - Añadir anuncio\n" +
 
                             "0 - Salir\n" +
                             "Introduce el número de la opcion que quieras realizar: "
@@ -88,7 +89,7 @@ public class Club {
 
                     break;
                 case "5":
-                    mod_inscripcion();
+                    anuncio(tablon);
 
                     break;
                 case "x":
@@ -217,5 +218,20 @@ public class Club {
             horario.remove(posicion);
         }
     }
-    private void mod_inscripcion(){}
+    private ArrayList<Anuncio> anuncio(ArrayList<Anuncio> tablon){
+        Anuncio aviso = new Anuncio();
+        Scanner teclado = new Scanner(System.in);
+        String input;
+        System.out.println("Por favor introduzca el nombre del nuevo evento");
+        input = teclado.next();
+        aviso.setAnuncio(input);
+
+
+        System.out.println("Por favor introduzca el lugar del evento");
+        input = teclado.next();
+        aviso.setFecha(input);
+        tablon.add(aviso);
+        return tablon;
+
+    }
 }
