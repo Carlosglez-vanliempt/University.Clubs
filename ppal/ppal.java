@@ -18,20 +18,20 @@ public class ppal {
     static final HashMap<String, Integer> explogin = new HashMap<>();
     public static void crearclubes(Club[] clubes) {
 
-        clubes[0] = new Club("Matemáticas", "", 12);
-        clubes[2] = new Club("Física", "", 12);
-        clubes[3] = new Club("Biología", "", 12);
-        clubes[4] = new Club("Literatura", "", 12);
-        clubes[5] = new Club("Filosofía", "", 12);
-        clubes[6] = new Club("Atletismo", "", 12);
-        clubes[7] = new Club("Tenis", "", 12);
-        clubes[8] = new Club("Padel", "", 12);
-        clubes[9] = new Club("Futbol", "", 12);
-        clubes[10] = new Club("Basket", "", 12);
-        clubes[11] = new Club("Alpinismo", "", 12);
-        clubes[12] = new Club("Programación", "", 12);
-        clubes[13] = new Club("E-Sports", "", 12);
-        clubes[14] = new Club("Roboótica", "", 12);
+        clubes[0] = new Club("Matemáticas", "", "12");
+        clubes[2] = new Club("Física", "", "12");
+        clubes[3] = new Club("Biología", "", "12");
+        clubes[4] = new Club("Literatura", "", "12");
+        clubes[5] = new Club("Filosofía", "", "12");
+        clubes[6] = new Club("Atletismo", "", "12");
+        clubes[7] = new Club("Tenis", "", "12");
+        clubes[8] = new Club("Padel", "", "12");
+        clubes[9] = new Club("Futbol", "", "12");
+        clubes[10] = new Club("Basket", "", "12");
+        clubes[11] = new Club("Alpinismo", "", "12");
+        clubes[12] = new Club("Programación", "", "12");
+        clubes[13] = new Club("E-Sports", "", "12");
+        clubes[14] = new Club("Roboótica", "", "12");
     }
 
     public static void registro() {
@@ -98,7 +98,7 @@ public class ppal {
                 teclado.next();
             }
             password = teclado.next();
-        } while  (!password.equals(exppass.get(exp)));
+        } while  (!exppass.containsValue(password));
 
         if (password.equals(exppass.get(exp))) {
             Usuario actual = expuser.get(exp);
@@ -119,6 +119,8 @@ public class ppal {
         crearclubes(clubes);
         Menu menu = new Menu();
         Scanner teclado = new Scanner(System.in);
+        boolean correcto = false;
+
         int exp = 0;
         int opt = -1;
         int opt1 = -1;
@@ -149,8 +151,10 @@ public class ppal {
                         exp = teclado.nextInt();
                     } while (!explogin.containsValue(exp));
 
-                    boolean correcto = inicioSesion(exp);
-
+                   correcto = inicioSesion(exp);
+                     opt1 = -1;
+                     optUser = -1;
+                     optClub = -1;
                     if (correcto = true) {
                         Usuario user = expuser.get(exp);
                         while (opt1 != 0) {
@@ -209,22 +213,22 @@ public class ppal {
                                                            System.out.println(clubes[optTodos-1].getMiembros());
                                                            break;
                                                        case 1:
-                                                           for (int i = 0; i < clubes[optTodos-1].getHorario().size();i++){
+                                                        /*   for (int i = 0; i < clubes[optTodos-1].getHorario().size();i++){
                                                                System.out.println("["+i+1+"]"+ clubes[optTodos-1].getHorario().get(i).toString());
                                                                break;
-                                                           }
+                                                           }*/
                                                        case 3:
-                                                           Evento [] actividad = new Evento[clubes[optTodos-1].getHorario().size()];
+                                                          /* Evento [] actividad = new Evento[clubes[optTodos-1].getHorario().size()];
                                                            for (int i = 0; i < clubes[optTodos-1].getHorario().size();i++){
                                                                System.out.println("["+i+1+"]"+ clubes[optTodos-1].getHorario().get(i).getNombre());
                                                                actividad[i] = clubes[optTodos-1].getHorario().get(i);
 
-                                                           }
-                                                           System.out.println("Elige una actividad");
+                                                           }*/
+                                                          /* System.out.println("Elige una actividad");
                                                            int act = teclado.nextInt();
                                                            user.ApuntarActividad(actividad[act]);
                                                            clubes[optTodos].getHorario().get(act).setApuntados(clubes[optTodos].getHorario().get(act).getApuntados()+1);
-                                                           break;
+                                                           break;*/
 
                                                        case 4:
                                                            for(int i = 0; i < clubes[optTodos].getTablon().size();i++){

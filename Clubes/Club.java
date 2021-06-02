@@ -56,7 +56,7 @@ public class Club {
         do {
             System.out.println("\n\n\n----MENU ADMIN----");
             System.out.print(
-                    "1 - Registrar horario\n" +
+                            "1 - Registrar horario\n" +
                             "2 - Crear nuevo evento\n" +
                             "3 - Cambiar aula de un evento\n" +
                             "4 - Cancelar evento\n" +
