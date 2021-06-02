@@ -84,7 +84,8 @@ public class Menu {
                 "\n-------- VER CLUBES --------" + "\n" +
                         "  0 - Salir" + "\n" +
                         "  1 - Ver todos los clubes" + "\n" +
-                        "  2 - Ver mis clubes"+ "\n" +
+                        "  2 - Inscribirme en un club"+ "\n" +
+                        "  3 - Ver mis clubes"+ "\n" +
                         "Opcion:"
         );
 
@@ -100,14 +101,17 @@ public class Menu {
 
     public void misClubes(Usuario user){
         Vector <Club> clubes = user.getClubes();
-        System.out.println("[0]Salir");
+        System.out.println("[0] Salir");
         for (int i = 0; i < user.getClubes().size(); i++ ){
             System.out.println("["+i+1+"]" + clubes.elementAt(i).getNombre());
         }
 
     }
 
-    public void club() { //del club en el que estás registrado
+    public int club() { //del club en el que estás registrado
+        int opciondentroclub = 0;
+        Scanner teclado = new Scanner(System.in);
+
         System.out.print(
                 "\n-------- CLUB --------" + "\n" +
                         "  0 - Salir" + "\n" +
@@ -118,6 +122,16 @@ public class Menu {
                         "  5 - Quitarse de una actividad" + "\n" +
                         "  6 - " + "\n"
         );
+        // recoger la opcion
+
+        while (!teclado.hasNextInt()) {
+            System.out.print("Error! numero: ");
+            teclado.next();
+        }
+        opciondentroclub = teclado.nextInt();
+
+        return opciondentroclub;
+
     }
 
     public void verTodosClubes(){
