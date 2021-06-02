@@ -7,13 +7,13 @@ public class Club {
     private String nombre;
     private String descripcion;
     private String miembros;
-    private String tablon;
+    private ArrayList<Anuncio> tablon;
+    private ArrayList<Evento> horario;
 
-    public Club(String nombre, String descripcion, String miembros, String tablon) {
+    public Club(String nombre, String descripcion, String miembros) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.miembros = miembros;
-        this.tablon = tablon;
     }
 
     public String getNombre() {
@@ -40,12 +40,8 @@ public class Club {
         this.miembros = miembros;
     }
 
-    public String getTablon() {
+    public ArrayList<Anuncio> getTablon() {
         return tablon;
-    }
-
-    public void setTablon(String tablon) {
-        this.tablon = tablon;
     }
 
 
@@ -54,8 +50,6 @@ public class Club {
 
     public void Menu(){
         Scanner teclado = new Scanner(System.in);
-        ArrayList<Evento> horario = new ArrayList<Evento>();
-        ArrayList<Anuncio> tablon = new ArrayList<Anuncio>();
 
         Scanner input = new Scanner(System.in);
         String menu = "0";
@@ -77,19 +71,19 @@ public class Club {
 
                     break;
                 case "2":
-                    crear_evento(horario);
+                   horario = crear_evento(horario);
 
                     break;
                 case "3":
-                    cambiar_aula(horario);
+                    horario = cambiar_aula(horario);
 
                     break;
                 case "4":
-                    cancelar_evento(horario);
+                   horario = cancelar_evento(horario);
 
                     break;
                 case "5":
-                    anuncio(tablon);
+                    tablon = anuncio(tablon);
 
                     break;
                 case "x":
@@ -148,7 +142,7 @@ public class Club {
         }
         return horario;
     }
-    private void crear_evento(ArrayList<Evento> horario){
+    private ArrayList<Evento> crear_evento(ArrayList<Evento> horario){
         Scanner teclado = new Scanner(System.in);
         String input;
         int input2;
@@ -168,8 +162,9 @@ public class Club {
 
         System.out.println("Por favor introduzca la fecha de realización del evento");
         String fecha = teclado.next();
+        return horario;
     }
-    private void cambiar_aula(ArrayList<Evento> horario){
+    private ArrayList<Evento> cambiar_aula(ArrayList<Evento> horario){
         String nombre = "prueba";
         String lugar = "prueba";
         int ocupantes = 0;
@@ -197,8 +192,9 @@ public class Club {
 
 
     }
+        return horario;
     }
-    private void cancelar_evento(ArrayList<Evento> horario){
+    private ArrayList<Evento> cancelar_evento(ArrayList<Evento> horario){
         Scanner teclado = new Scanner(System.in);
         System.out.println("Por favor introduzca el nombre del evento");
         String nombre = teclado.next();
@@ -214,6 +210,7 @@ public class Club {
         if (encontrado) {
             horario.remove(posicion);
         }
+        return horario;
     }
     private ArrayList<Anuncio> anuncio(ArrayList<Anuncio> tablon){
         String desc = "prueba";
