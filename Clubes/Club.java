@@ -1,4 +1,6 @@
+
 package Clubes;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,11 +8,15 @@ import java.util.Scanner;
 public class Club {
     private String nombre;
     private String descripcion;
-    private String miembros;
+    private int miembros;
     private ArrayList<Anuncio> tablon;
     private ArrayList<Evento> horario;
 
-    public Club(String nombre, String descripcion, String miembros) {
+    public ArrayList<Evento> getHorario() {
+        return horario;
+    }
+
+    public Club(String nombre, String descripcion, int miembros) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.miembros = miembros;
@@ -32,11 +38,11 @@ public class Club {
         this.descripcion = descripcion;
     }
 
-    public String getMiembros() {
+    public int getMiembros() {
         return miembros;
     }
 
-    public void setMiembros(String miembros) {
+    public void setMiembros(int miembros) {
         this.miembros = miembros;
     }
 
@@ -56,7 +62,7 @@ public class Club {
         do {
             System.out.println("\n\n\n----MENU ADMIN----");
             System.out.print(
-                            "1 - Registrar horario\n" +
+                    "1 - Registrar horario\n" +
                             "2 - Crear nuevo evento\n" +
                             "3 - Cambiar aula de un evento\n" +
                             "4 - Cancelar evento\n" +
@@ -67,11 +73,11 @@ public class Club {
             );
             switch (menu = input.nextLine()) {
                 case "1":
-                   horario = registrar_horario();
+                    horario = registrar_horario();
 
                     break;
                 case "2":
-                   horario = crear_evento(horario);
+                    horario = crear_evento(horario);
 
                     break;
                 case "3":
@@ -79,7 +85,7 @@ public class Club {
 
                     break;
                 case "4":
-                   horario = cancelar_evento(horario);
+                    horario = cancelar_evento(horario);
 
                     break;
                 case "5":
@@ -122,12 +128,12 @@ public class Club {
 
 
                 System.out.println("Por favor introduzca el lugar del evento");
-               String lugar = teclado.next();
+                String lugar = teclado.next();
 
 
 
                 System.out.println("Por favor introduzca los ocupantes del evento");
-               int ocupantes = teclado.nextInt();
+                int ocupantes = teclado.nextInt();
 
 
                 System.out.println("Por favor introduzca la fecha de realización del evento");
@@ -191,7 +197,7 @@ public class Club {
             horario.add(posicion, actividad);
 
 
-    }
+        }
         return horario;
     }
     private ArrayList<Evento> cancelar_evento(ArrayList<Evento> horario){
