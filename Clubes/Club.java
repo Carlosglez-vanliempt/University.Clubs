@@ -1,7 +1,6 @@
 
 package Clubes;
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,8 +8,17 @@ public class Club {
     private String nombre;
     private String descripcion;
     private int miembros;
-    private ArrayList<Anuncio> tablon;
-    private ArrayList<Evento> horario;
+    private ArrayList<Anuncio> tablon = new ArrayList<>();
+    private ArrayList<Evento> horario = new ArrayList<>();
+    private int admin;
+
+    public int getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(int admin) {
+        this.admin = admin;
+    }
 
     public ArrayList<Evento> getHorario() {
         return horario;
