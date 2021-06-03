@@ -16,12 +16,12 @@ public class Aula {
 
     @Override
     public String toString() {
-        return "Aula{" +
-                "id= " + id +
-                ", nombre= '" + nombre + '\'' +
-                ", capacidad= " + capacidad +
-                ", localizacion= " + localizacion +
-                '}';
+        System.out.print("-------- DATOS AULA -------" + "\n" +
+                "Id: " + id + "\n" +
+                "Nombre: " + nombre + "\n" +
+                "Capacidad: " + capacidad + "\n" +
+                "localizacion: " + localizacion + "\n");
+        return "";
     }
 
     public int getId() {

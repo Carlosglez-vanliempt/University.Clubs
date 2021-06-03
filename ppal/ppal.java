@@ -1,5 +1,6 @@
 package ppal;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Clubes.Club;
@@ -99,7 +100,7 @@ public class ppal {
                 teclado.next();
             }
             password = teclado.next();
-        } while (!password.equals(exppass.get(exp)));
+        }  while  (!password.equals(exppass.get(exp)));
 
         if (password.equals(exppass.get(exp))) {
             Usuario actual = expuser.get(exp);
@@ -196,8 +197,6 @@ public class ppal {
                                                         break;
                                                     }
                                                 }
-
-
                                                 if (apuntado == 0 || user.getClubes().size() == 0) {
                                                     menu.menuclubnoapuntado();
                                                     int noapunt = teclado.nextInt();
@@ -219,19 +218,19 @@ public class ppal {
                                                     switch (optapt) {
                                                         case 0:
                                                             break;
-                                                        case 2:
-                                                            System.out.println(clubes[optTodos - 1].getMiembros());
-                                                            break;
-                                                        case 1:
+                                                        case 1: // VER ACTIVIDAD
                                                             if(clubes[optTodos-1].getHorario().size() > 0){
-                                                                for (int i = 0; i < clubes[optTodos - 1].getHorario().size(); i++) {
-                                                                    System.out.println("[" + i + 1 + "]" + clubes[optTodos - 1].getHorario().get(i).toString());
-
+                                                            ArrayList<Evento> VerEventos = clubes[optTodos-1].getHorario();
+                                                                for (int i = 0; i < VerEventos.size(); i++) {
+                                                                    System.out.println("[" + i + 1 + "] " + VerEventos.toString());
                                                                 }
-
                                                             }
                                                             else
                                                                 System.out.println("No hay actividades disponibles");
+                                                            break;
+
+                                                        case 2:
+                                                            System.out.println(clubes[optTodos - 1].getMiembros());
                                                             break;
 
                                                         case 3:

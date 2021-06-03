@@ -89,7 +89,6 @@ public class Usuario {
         if (pssw.equals(this.contraseña)) {
             System.out.println("ok");
         }
-
     }
 
     public void ModDAtos() {
@@ -171,7 +170,7 @@ public class Usuario {
                 "Carrera: " + carrera + "\n" +
                 "Contraseña: " + contraseña + "\n" +
                 "Eres lider? " + lider + "\n");
-        return "------------";
+        return "";
     }
 
 

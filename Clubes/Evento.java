@@ -8,7 +8,17 @@ public class Evento {
     private String fecha;
     //Constructor
 
-    public Evento(String nombre, String lugar, int capacidad, String fecha) {
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "nombre='" + nombre + '\'' +
+                ", lugar='" + lugar + '\'' +
+                ", apuntados=" + apuntados +
+                ", fecha='" + fecha + '\'' +
+                '}';
+    }
+
+    public Evento(String nombre, String lugar, int apuntados, String fecha) {
         this.nombre = nombre;
         this.lugar = lugar;
         this.apuntados = apuntados;

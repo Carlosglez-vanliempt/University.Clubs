@@ -10,6 +10,7 @@ public class Club {
     private int miembros;
     private ArrayList<Anuncio> tablon = new ArrayList<>();
     private ArrayList<Evento> horario = new ArrayList<>();
+
     private int admin;
 
     public int getAdmin() {
@@ -57,10 +58,6 @@ public class Club {
     public ArrayList<Anuncio> getTablon() {
         return tablon;
     }
-
-
-
-
 
     public void Menu(){
         Scanner teclado = new Scanner(System.in);
@@ -176,6 +173,8 @@ public class Club {
 
         System.out.println("Por favor introduzca la fecha de realización del evento");
         String fecha = teclado.next();
+
+        horario.add(new Evento(nombre,lugar,ocupantes,fecha));
         return horario;
     }
     private ArrayList<Evento> cambiar_aula(ArrayList<Evento> horario){

@@ -24,4 +24,12 @@ public class Anuncio {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString() {
+        return "Anuncio{" +
+                "anuncio='" + anuncio + '\'' +
+                ", fecha='" + fecha + '\'' +
+                '}';
+    }
 }
