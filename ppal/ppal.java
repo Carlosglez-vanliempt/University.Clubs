@@ -98,7 +98,7 @@ public class ppal {
                 teclado.next();
             }
             password = teclado.next();
-        } while  (!password.equals(exppass.get(exp)));
+        }  while  (!password.equals(exppass.get(exp)));
 
         if (password.equals(exppass.get(exp))) {
             Usuario actual = expuser.get(exp);
@@ -119,6 +119,7 @@ public class ppal {
         crearclubes(clubes);
         Menu menu = new Menu();
         Scanner teclado = new Scanner(System.in);
+        boolean correcto = false;
         int exp = 0;
         int opt = -1;
         int opt1 = -1;
@@ -149,8 +150,10 @@ public class ppal {
                         exp = teclado.nextInt();
                     } while (!explogin.containsValue(exp));
 
-                    boolean correcto = inicioSesion(exp);
-
+                    correcto = inicioSesion(exp);
+                    opt1 = -1;
+                    optUser = -1;
+                    optClub = -1;
                     if (correcto = true) {
                         Usuario user = expuser.get(exp);
                         while (opt1 != 0) {

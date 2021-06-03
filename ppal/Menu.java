@@ -37,7 +37,7 @@ public class Menu {
 
         System.out.print(
                 "\n-------- PERFIL USUARIO GENERAL --------" + "\n" +
-                        "  0 - Salir" + "\n" +
+                        "  0 - Atrás" + "\n" +
                         "  1 - Datos de usuario" + "\n" +
                         "  2 - Ver clubes"  + "\n" +
                         "Opcion:"
@@ -60,7 +60,7 @@ public class Menu {
 
         System.out.print(
                 "\n-------- DATOS DEL USUARIO --------" + "\n" +
-                        "  0 - Salir" + "\n" +
+                        "  0 - Atrás" + "\n" +
                         "  1 - Ver datos" + "\n" +
                         "  2 - Modificar datos"+ "\n" +
                         "Opcion:"
@@ -82,7 +82,7 @@ public class Menu {
 
         System.out.print(
                 "\n-------- VER CLUBES --------" + "\n" +
-                        "  0 - Salir" + "\n" +
+                        "  0 - Atrás" + "\n" +
                         "  1 - Ver todos los clubes" + "\n" +
                         "  2 - Ver mis clubes"+ "\n" +
                         "Opcion:"
@@ -100,7 +100,7 @@ public class Menu {
     public void menuclubnoapuntado(){
         System.out.print(
                 "\n-------- CLUB --------" + "\n" +
-                        "  0 - Salir" + "\n" +
+                        "  0 - Atrás" + "\n" +
                         "  1 - Ver descripción" + "\n" +
                         "  2 - Apuntarse" + "\n"
 
