@@ -115,17 +115,36 @@ public class Menu {
 
     }
 
-    public void menuclubapuntado() { //del club en el que estás registrado
-        System.out.print(
-                "\n-------- CLUB --------" + "\n" +
-                        "  0 - Salir" + "\n" +
-                        "  1 - Ver actividades" + "\n" +
-                        "  2 - Ver miembros" + "\n" +
-                        "  3 - Apuntarse a una actividad" + "\n" +
-                        "  4 - Ver tablón de anuncios" + "\n" +
-                        "  5 - Quitarse de una actividad" + "\n" +
-                        "  6 - " + "\n"
-        );
+    public void menuclubapuntado(Club club,Usuario user) { //del club en el que estás registrado
+        if(club.getAdmin() != user.getNumExp()){
+            System.out.print(
+                    "\n-------- CLUB --------" + "\n" +
+                            "  0 - Salir" + "\n" +
+                            "  1 - Ver actividades" + "\n" +
+                            "  2 - Ver miembros" + "\n" +
+                            "  3 - Apuntarse a una actividad" + "\n" +
+                            "  4 - Ver tablón de anuncios" + "\n" +
+                            "  5 - Quitarse de una actividad" + "\n"
+
+            );
+
+        }
+        else{
+            System.out.print(
+                    "\n-------- CLUB --------" + "\n" +
+                            "  0 - Salir" + "\n" +
+                            "  1 - Ver actividades" + "\n" +
+                            "  2 - Ver miembros" + "\n" +
+                            "  3 - Apuntarse a una actividad" + "\n" +
+                            "  4 - Ver tablón de anuncios" + "\n" +
+                            "  5 - Quitarse de una actividad" + "\n" +
+                            "  6 -  Menú admin"+ "\n"
+            );
+        }
+
+    }
+    public void menuadmin(){
+
     }
 
     public void verTodosClubes(){
@@ -152,7 +171,6 @@ public class Menu {
     public static int pintar_menu_recoger_opcion () {
         int opcion = 0;
         Scanner teclado = new Scanner(System.in);
-
         // Informar de las opciones
         System.out.print(
                 "\n-------- Bienvenidos al ALMACENAMIENTO --------" + "\n" +
@@ -165,7 +183,6 @@ public class Menu {
                         "  6 - Cargar almacenamiento guardado" + "\n" +
                         "OpciÃ³n:"
         );
-
         // recoger la opcion
         if (teclado.hasNextInt()) {
             opcion = teclado.nextInt();
