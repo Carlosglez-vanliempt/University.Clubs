@@ -104,17 +104,10 @@ public class Usuario {
         boolean correcto;
         switch (seleccion) {
             case 1:
-                do {
-                    System.out.println("Numero expediente: ");
-                    numero_Expediente = in.nextLine();
-                    if (numero_Expediente.matches("[0-9]*")) { // validar que la entrada sea numeria
-                        correcto = true;
-                    } else {
-                        correcto = false;
-                    }
-                } while (!correcto);
+                System.out.println("Introduce el nuevo número de expediente");
+              int nexp = in.nextInt();
 
-                setNumExp(Integer.parseInt(numero_Expediente));
+                setNumExp(nexp);
                 break;
 
             case 2:
