@@ -20,20 +20,21 @@ public class ppal {
 
     public static void crearclubes(Club[] clubes) {
 
-        clubes[0] = new Club("Matemáticas", "", 12);
-        clubes[2] = new Club("Física", "", 12);
-        clubes[3] = new Club("Biología", "", 12);
-        clubes[4] = new Club("Literatura", "", 12);
-        clubes[5] = new Club("Filosofía", "", 12);
-        clubes[6] = new Club("Atletismo", "", 12);
-        clubes[7] = new Club("Tenis", "", 12);
-        clubes[8] = new Club("Padel", "", 12);
-        clubes[9] = new Club("Futbol", "", 12);
-        clubes[10] = new Club("Basket", "", 12);
-        clubes[11] = new Club("Alpinismo", "", 12);
-        clubes[12] = new Club("Programación", "", 12);
-        clubes[13] = new Club("E-Sports", "", 12);
-        clubes[14] = new Club("Roboótica", "", 12);
+        clubes[0] = new Club("Matemáticas", "No se encuentra información", 12);
+        clubes[1] = new Club("Física", "No se encuentra información", 12);
+        clubes[2] = new Club("Biología", "No se encuentra información", 12);
+        clubes[3] = new Club("Literatura", "No se encuentra información", 12);
+        clubes[4] = new Club("Filosofía", "No se encuentra información", 12);
+        clubes[5] = new Club("Atletismo", "No se encuentra información", 12);
+        clubes[6] = new Club("Tenis", "No se encuentra información", 12);
+        clubes[7] = new Club("Padel", "No se encuentra información", 12);
+        clubes[8] = new Club("Futbol", "No se encuentra información", 12);
+        clubes[9] = new Club("Basket", "No se encuentra información", 12);
+        clubes[10] = new Club("Alpinismo", "No se encuentra información", 12);
+        clubes[11] = new Club("Ciclismo", "No se encuentra información", 12);
+        clubes[12] = new Club("Programación", "No se encuentra información", 12);
+        clubes[13] = new Club("E-Sports", "No se encuentra información", 12);
+        clubes[14] = new Club("Roboótica", "No se encuentra información", 12);
     }
 
     public static void registro() {

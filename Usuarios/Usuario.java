@@ -106,7 +106,6 @@ public class Usuario {
             case 1:
                 System.out.println("Introduce el nuevo número de expediente");
               int nexp = in.nextInt();
-
                 setNumExp(nexp);
                 break;
 
