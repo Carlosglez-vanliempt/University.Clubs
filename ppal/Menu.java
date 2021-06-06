@@ -165,6 +165,14 @@ public class Menu {
                 "15. Robótica\n");
     }
 
+    public static void pulsaCualquierTeclaParaContinuar() {
+        System.out.println("pulsa la tecla enter para continuar...");
+        try {
+            System.in.read(); // espera una entrada por el usuario para continuar la ejecucion del programa
+        } catch (Exception e) {
+        }
+    }
+
 
 
 /* MENU EJEMPLO PARA COGER COPY PASTE

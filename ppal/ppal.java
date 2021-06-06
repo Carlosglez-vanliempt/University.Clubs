@@ -168,6 +168,7 @@ public class ppal {
                                         switch (optUser) {
                                             case 1:
                                                 System.out.println(user.toString());
+                                                pulsaCualquierTeclaParaContinuar();
                                                 break;
                                             case 2:
                                                 user.ModDAtos();
@@ -388,6 +389,14 @@ public class ppal {
                 default:
                     System.out.println("Opción incorrecta");
             }
+        }
+    }
+
+    public static void pulsaCualquierTeclaParaContinuar() {
+        System.out.println("pulsa la tecla enter para continuar...");
+        try {
+            System.in.read(); // espera una entrada por el usuario para continuar la ejecucion del programa
+        } catch (Exception e) {
         }
     }
 }

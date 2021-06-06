@@ -163,13 +163,17 @@ public class Usuario {
 
     @Override
     public String toString() {
-        System.out.print("-------- DATOS DE TU USUARIO -------" + "\n" +
-                "Número de Expediente: " + numExp + "\n" +
-                "Nombre: " + nombre + "\n" +
-                "Apellido: " + apellido + "\n" +
-                "Carrera: " + carrera + "\n" +
-                "Contraseña: " + contraseña + "\n" +
-                "Eres lider? " + lider + "\n");
+
+        if (lider){
+            System.out.print("-------- DATOS DE TU USUARIO -------" + "\n" + "Número de Expediente: " + numExp + "\n"
+                    + "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Carrera: " + carrera + "\n"
+                    + "Contraseña: " + contraseña + "\n" + "Eres lider? " + lider + "\n");
+        }else{
+            System.out.print("-------- DATOS DE TU USUARIO -------" + "\n" + "Número de Expediente: " + numExp + "\n"
+                    + "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Carrera: " + carrera + "\n"
+                    + "Contraseña: " + contraseña + "\n" );
+        }
+        
         return "";
     }
 
