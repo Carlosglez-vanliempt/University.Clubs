@@ -100,32 +100,42 @@ public class Usuario {
         System.out.println("  4 - Carrera");
         System.out.println("  5 - Contraseña");
         int seleccion = in.nextInt();
+        String numero_Expediente;
+        boolean correcto;
         switch (seleccion) {
             case 1:
-                System.out.println("Introduce el nuevo número de expediente");
-                int exp = in.nextInt();
-                setNumExp(exp);
+                do {
+                    System.out.println("Numero expediente: ");
+                    numero_Expediente = in.nextLine();
+                    if (numero_Expediente.matches("[0-9]*")) { // validar que la entrada sea numeria
+                        correcto = true;
+                    } else {
+                        correcto = false;
+                    }
+                } while (!correcto);
+
+                setNumExp(Integer.parseInt(numero_Expediente));
                 break;
 
             case 2:
                 System.out.println("Introduce el nuevo nombre");
-                cambio = in.next();
+                cambio = in.nextLine();
                 setNombre(cambio);
                 break;
             case 3:
                 System.out.println("Introduce el nuevo apellido");
-                cambio = in.next();
+                cambio = in.nextLine();
                 setApellido(cambio);
                 break;
 
             case 4:
                 System.out.println("Introduce la nueva carrera");
-                cambio = in.next();
+                cambio = in.nextLine();
                 setCarrera(cambio);
                 break;
             case 5:
                 System.out.println("Introduce la nueva contraseña");
-                cambio = in.next();
+                cambio = in.nextLine();
                 setContraseña(cambio);
                 break;
 

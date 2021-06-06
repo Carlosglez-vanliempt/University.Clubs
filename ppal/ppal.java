@@ -46,40 +46,49 @@ public class ppal {
         String carrera = "";
         String contraseña = "";
 
-        System.out.println("Numero expediente: ");
-        while (!teclado.hasNextInt()) {
-            System.out.print("Error! numero: ");
-            teclado.next();
-        }
-        numExp = teclado.nextInt();
+        boolean correcto = false;
+        String numero_Expediente = "";
+
+        do {
+            System.out.println("Numero expediente: ");
+            numero_Expediente = teclado.nextLine();
+            if (numero_Expediente.matches("[0-9]*")) { // validar que la entrada sea numeria
+                correcto = true;
+            } else {
+                correcto = false;
+            }
+        } while (!correcto);
+
+        
+        numExp = Integer.parseInt(numero_Expediente);
 
         System.out.println("Nombre: ");
-        while (!teclado.hasNext()) {
+        while (!teclado.hasNextLine()) {
             System.out.print("Error! Nombre: ");
             teclado.next();
         }
-        nombre = teclado.next();
+        nombre = teclado.nextLine();
 
         System.out.println("Apellido: ");
-        while (!teclado.hasNext()) {
+        while (!teclado.hasNextLine()) {
             System.out.print("Error! Apellido: ");
             teclado.next();
         }
-        apellido = teclado.next();
+        apellido = teclado.nextLine();
 
         System.out.println("Carrera: ");
-        while (!teclado.hasNext()) {
+        while (!teclado.hasNextLine()) {
             System.out.print("Error! Carrera: ");
             teclado.next();
         }
-        carrera = teclado.next();
+        carrera = teclado.nextLine();
 
         System.out.println("Contraseña: ");
-        while (!teclado.hasNext()) {
+        while (!teclado.hasNextLine()) {
             System.out.print("Error! Contraseña: ");
             teclado.next();
         }
-        contraseña = teclado.next();
+        contraseña = teclado.nextLine();
 
         System.out.println("Gracias por registrarte!");
 
@@ -95,11 +104,11 @@ public class ppal {
 
         do {
             System.out.println("Contraseña: ");
-            while (!teclado.hasNext()) {
+            while (!teclado.hasNextLine()) {
                 System.out.print("Error! Contraseña: ");
                 teclado.next();
             }
-            password = teclado.next();
+            password = teclado.nextLine();
         }  while  (!password.equals(exppass.get(exp)));
 
         if (password.equals(exppass.get(exp))) {
