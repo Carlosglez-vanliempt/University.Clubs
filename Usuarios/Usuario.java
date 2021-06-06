@@ -112,23 +112,23 @@ public class Usuario {
 
             case 2:
                 System.out.println("Introduce el nuevo nombre");
-                cambio = in.nextLine();
+                cambio = in.next();
                 setNombre(cambio);
                 break;
             case 3:
                 System.out.println("Introduce el nuevo apellido");
-                cambio = in.nextLine();
+                cambio = in.next();
                 setApellido(cambio);
                 break;
 
             case 4:
                 System.out.println("Introduce la nueva carrera");
-                cambio = in.nextLine();
+                cambio = in.next();
                 setCarrera(cambio);
                 break;
             case 5:
                 System.out.println("Introduce la nueva contraseña");
-                cambio = in.nextLine();
+                cambio = in.next();
                 setContraseña(cambio);
                 break;
 
